@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Tendency Calculator</title>
+</head>
+<body>
+    <h1>Central Tendency Calculator</h1>
+    <p>Upload a CSV file or manually input data to calculate the mean, median, and mode.</p>
+    
+    <!-- File Upload Form -->
+    <form id="uploadForm" enctype="multipart/form-data">
+        <label for="file">Upload a CSV file:</label>
+        <input type="file" id="file" name="file" accept=".csv">
+        <br><br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="columnSelection" style="display: none;">
+        <label for="columns">Select Column:</label>
+        <select id="columns"></select>
+        <br><br>
+        <button id="processButton">Calculate</button>
+    </div>
+
+    <br><hr><br>
+
+    <!-- Manual Input Form -->
+    <form id="manualForm">
+        <label for="data">Enter Data (comma-separated):</label><br>
+        <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const columnSelection = document.getElementById('columnSelection');
+        const columnsDropdown = document.getElementById('columns');
+        const processButton = document.getElementById('processButton');
+        const manualForm = document.getElementById('manualForm');
+        const resultDiv = document.getElementById('result');
+
+        let uploadedFilePath = '';  // Store the uploaded file path
+
+        // Handle File Upload
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(uploadForm);
+
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                uploadedFilePath = data.file_path;  // Save file path
+                columnSelection.style.display = 'block';
+                columnsDropdown.innerHTML = data.numeric_columns.map(col => `<option value="${col}">${col}</option>`).join('');
+            }
+        });
+
+        // Handle Column Selection and Processing
+        processButton.addEventListener('click', async () => {
+            const selectedColumn = columnsDropdown.value;
+
+            const response = await fetch('/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    column: selectedColumn,
+                    file_path: uploadedFilePath
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                displayResults(data, selectedColumn);
+            }
+        });
+
+        // Handle Manual Data Input
+        manualForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(manualForm);
+
+            const response = await fetch('/manual', {
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                displayResults(data, "Manual Input");
+            }
+        });
+
+        // Display Results
+        function displayResults(data, title) {
+            resultDiv.innerHTML = `
+                <h2>Results for ${title}</h2>
+                <p><strong>Mean:</strong> ${data.mean.toFixed(2)}</p>
+                <p><strong>Median:</strong> ${data.median.toFixed(2)}</p>
+                <p><strong>Mode:</strong> ${data.mode.join(', ')}</p>
+                <h3>Histogram</h3>
+                <img src="${data.plot_url}" alt="Histogram">
+            `;
+        }
+    </script>
+</body>
+</html>
