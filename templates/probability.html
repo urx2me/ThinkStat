@@ -192,6 +192,58 @@
         .close-btn:hover {
             background-color: #5F9EA0;
         }
+
+        .gamble-button {
+            background-color: #7393B3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .gamble-button:hover {
+            background-color: #7393B3;
+        }
+
+        .gamble-popup {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .slot-machine {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .gamble-popup button {
+            background-color: #7393B3;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gamble-popup button:hover {
+            background-color: #7393B3;
+        }
     </style>
 </head>
 <body>
@@ -211,8 +263,10 @@
         <p class="definition">In probability, key concepts include an <strong>experiment</strong> (a procedure that yields one of a possible set of outcomes), the <strong>sample space</strong> (the set of all possible outcomes), and an <strong>event</strong> (a subset of the sample space).</p>
         <p class="definition">The probability of an event is calculated by dividing the number of favorable outcomes by the number of possible outcomes in the sample space.</p>
         <button class="quiz-button" onclick="toggleQuiz()">Take the Quiz</button>
+        <button class="gamble-button" onclick="toggleGamble()">Try Your Luck!</button>
     </section>
 
+    <!-- Quiz Popup -->
     <div class="quiz-popup" id="quizPopup">
         <h3>Answer these questions:</h3>
         <div class="question" id="question1">
@@ -227,12 +281,12 @@
         </div>
 
         <div class="question" id="question2" style="display:none;">
-            <p>How many sides does a cube have?</p>
+            <p>2. A die has six sides numbered 1 to 6. If you roll it once, how many possible outcomes are there?</p>
             <div class="answers">
                 <label><input type="radio" name="q2" value="6"> 6</label>
-                <label><input type="radio" name="q2" value="8"> 8</label>
+                <label><input type="radio" name="q2" value="5"> 5</label>
                 <label><input type="radio" name="q2" value="4"> 4</label>
-                <label><input type="radio" name="q2" value="10"> 10</label>
+                <label><input type="radio" name="q2" value="3"> 3</label>
             </div>
             <button onclick="nextQuestion(2)">Next</button>
         </div>
@@ -255,6 +309,13 @@
         <button class="close-btn" onclick="closeScore()">Close</button>
     </div>
 
+    <div class="gamble-popup" id="gamblePopup">
+        <h3>Slot Machine</h3>
+        <div class="slot-machine" id="slotResult">🍒 🍋 🍊</div>
+        <button onclick="spinSlot()">Spin!</button>
+        <button class="close-btn" onclick="closeGamble()">Close</button>
+    </div>
+
     <footer>
         <p>&copy; 2024 Probability Learning</p>
     </footer>
@@ -264,25 +325,21 @@
         let score = 0;
 
         function toggleQuiz() {
-       
             score = 0;
             currentQuestion = 1;
 
-          
             const allAnswers = document.querySelectorAll('input[type="radio"]');
             allAnswers.forEach(answer => answer.checked = false);
 
             document.getElementById('scorePopup').style.display = 'none';
             document.getElementById('quizPopup').style.display = 'block';
 
-         
             document.getElementById('question1').style.display = 'block';
             document.getElementById('question2').style.display = 'none';
             document.getElementById('question3').style.display = 'none';
         }
 
         function nextQuestion(questionNumber) {
-           
             let selectedAnswer = document.querySelector(`input[name="q${questionNumber}"]:checked`);
             if (selectedAnswer) {
                 if ((questionNumber === 1 && selectedAnswer.value === "10") ||
@@ -292,7 +349,6 @@
                 }
             }
 
-          
             if (questionNumber < 3) {
                 document.getElementById(`question${questionNumber}`).style.display = 'none';
                 document.getElementById(`question${questionNumber + 1}`).style.display = 'block';
@@ -309,6 +365,24 @@
 
         function closeScore() {
             document.getElementById('scorePopup').style.display = 'none';
+        }
+
+        function toggleGamble() {
+            document.getElementById('gamblePopup').style.display = 'block';
+        }
+
+        function closeGamble() {
+            document.getElementById('gamblePopup').style.display = 'none';
+        }
+
+        function spinSlot() {
+            const fruits = ['🍒', '🍋', '🍊', '🍉', '🍇'];
+            const spinResult = [];
+            for (let i = 0; i < 3; i++) {
+                const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
+                spinResult.push(randomFruit);
+            }
+            document.getElementById('slotResult').textContent = spinResult.join(' ');
         }
     </script>
 </body>
