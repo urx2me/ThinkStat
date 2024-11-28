@@ -42,6 +42,10 @@ def measure_of_tendency():
 def events():
     return render_template('events.html')
 
+@app.route('/probability')
+def probability():
+    return render_template('probability.html')
+
 @app.route('/process', methods=['POST'])
 def process_data():
     column = request.form.get('column')
