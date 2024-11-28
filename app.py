@@ -193,6 +193,19 @@ def calculate_grouped(numbers, interval):
     f2 = frequencies[mode_class_index + 1] if mode_class_index < len(frequencies) - 1 else 0
     mode = mode_lower_bound + ((f1 - f0) / ((f1 - f0) + (f1 - f2))) * interval if f1 != 0 else None
 
+    # Generate Grouped Histogram
+    plt.hist(numbers, bins=[float(bin.split(' - ')[0]) for bin in bins] + [float(bins[-1].split(' - ')[1])], color='green', alpha=0.7)
+    plt.title('Grouped Data Histogram')
+    plt.xlabel('Value')
+    plt.ylabel('Frequency')
+    plt.tight_layout()
+
+    img = io.BytesIO()
+    plt.savefig(img, format='png')
+    img.seek(0)
+    plot_url = base64.b64encode(img.getvalue()).decode()
+    plt.close()
+
     return {
         'frequency_table': {
             'bins': bins,
@@ -201,6 +214,7 @@ def calculate_grouped(numbers, interval):
         'mean': mean,
         'median': median,
         'mode': mode,
+        'plot_url': f'data:image/png;base64,{plot_url}'
     }
 
 
