@@ -1,0 +1,201 @@
+Date,Source,Platform,Sessions,Users,Pageviews,Bounce Rate (%),Session Duration (min),Conversion Rate (%),Marketing Campaign
+2024-01-01,Organic Search,LinkedIn,147,148,330,66.79,4.82,7.39,Valentine's Promo
+2024-01-01,Paid Ads,Other,335,123,226,78.06,7.63,4.7,New Year Blast
+2024-01-01,Organic Search,Instagram,397,209,943,57.99,5.68,5.38,Winter Sale
+2024-01-02,Organic Search,LinkedIn,446,55,141,50.33,9.24,3.79,New Year Blast
+2024-01-02,Social Media,Instagram,406,311,897,24.53,5.16,7.36,General
+2024-01-02,Organic Search,LinkedIn,276,429,112,74.76,6.11,7.59,Valentine's Promo
+2024-01-02,Paid Ads,Instagram,252,212,360,48.85,7.37,4.7,New Year Blast
+2024-01-03,Organic Search,Twitter,83,35,423,35.04,3.25,5.66,Winter Sale
+2024-01-03,Direct,Instagram,496,232,477,68.45,14.86,1.88,nan
+2024-01-03,Social Media,Instagram,129,140,772,71.81,12.13,8.64,New Year Blast
+2024-01-03,Organic Search,Twitter,457,434,687,48.09,1.13,2.85,Winter Sale
+2024-01-04,Organic Search,LinkedIn,139,75,448,51.66,6.58,4.62,Valentine's Promo
+2024-01-04,Direct,Twitter,462,366,848,31.77,4.63,2.5,New Year Blast
+2024-01-04,Organic Search,Twitter,103,33,353,46.23,1.02,2.74,General
+2024-01-04,Paid Ads,LinkedIn,302,37,395,54.17,9.41,1.19,Valentine's Promo
+2024-01-05,Organic Search,Google,144,311,784,49.66,4.34,6.09,Valentine's Promo
+2024-01-05,Organic Search,LinkedIn,407,174,697,44.15,1.07,0.91,Valentine's Promo
+2024-01-06,Organic Search,Google,95,321,188,55.7,14.75,7.87,Valentine's Promo
+2024-01-06,Organic Search,Other,484,252,715,48.45,6.49,3.47,Valentine's Promo
+2024-01-07,Organic Search,Google,72,54,616,45.3,8.46,6.71,General
+2024-01-07,Social Media,LinkedIn,422,30,612,42.66,2.24,2.64,nan
+2024-01-08,Referral,Twitter,496,268,950,68.04,13.74,7.38,General
+2024-01-08,Paid Ads,Facebook,154,57,519,26.85,7.67,6.14,New Year Blast
+2024-01-08,Organic Search,Other,55,115,510,49.09,14.04,4.97,Valentine's Promo
+2024-01-09,Paid Ads,Google,384,329,395,51.28,9.32,2.9,Valentine's Promo
+2024-01-09,Paid Ads,Google,299,394,726,66.25,3.65,6.18,Valentine's Promo
+2024-01-09,Social Media,Google,226,44,388,33.17,7.4,2.06,Winter Sale
+2024-01-09,Referral,Facebook,227,330,328,65.92,11.25,6.96,New Year Blast
+2024-01-11,Organic Search,Facebook,454,302,540,48.26,1.5,6.35,Winter Sale
+2024-01-12,Organic Search,Twitter,251,96,964,61.47,13.52,5.19,General
+2024-01-13,Direct,Other,450,181,122,77.25,5.57,5.37,Winter Sale
+2024-01-14,Paid Ads,Twitter,365,247,972,49.82,8.32,4.91,Valentine's Promo
+2024-01-14,Organic Search,Twitter,59,243,964,76.66,2.68,7.09,Valentine's Promo
+2024-01-14,Referral,Instagram,88,255,510,70.29,2.48,4.26,Valentine's Promo
+2024-01-15,Social Media,Google,166,98,753,38.69,9.24,3.33,Winter Sale
+2024-01-15,Organic Search,Twitter,308,80,680,52.1,6.85,3.29,Valentine's Promo
+2024-01-15,Paid Ads,Instagram,438,360,971,63.29,11.59,4.35,General
+2024-01-15,Paid Ads,Instagram,335,57,674,44.38,6.38,0.89,Valentine's Promo
+2024-01-15,Social Media,LinkedIn,487,406,391,41.23,14.46,6.72,New Year Blast
+2024-01-15,Organic Search,Other,112,268,547,69.84,9.72,5.75,General
+2024-01-18,Organic Search,Google,420,282,715,63.25,11.41,1.28,New Year Blast
+2024-01-18,Paid Ads,Instagram,213,375,931,62.84,4.8,6.11,Valentine's Promo
+2024-01-21,Direct,Instagram,490,389,695,29.93,13.39,7.29,Winter Sale
+2024-01-21,Direct,Other,93,82,904,42.76,7.62,2.69,Winter Sale
+2024-01-21,Organic Search,LinkedIn,57,162,395,70.19,1.53,2.03,Valentine's Promo
+2024-01-22,Paid Ads,Google,423,278,789,75.38,11.43,9.66,Valentine's Promo
+2024-01-22,Organic Search,Google,354,224,428,36.66,9.01,2.01,General
+2024-01-23,Referral,Facebook,127,140,914,68.9,8.23,4.47,General
+2024-01-23,Organic Search,Instagram,285,379,941,74.93,8.79,7.87,Valentine's Promo
+2024-01-24,Organic Search,Twitter,130,353,868,65.54,12.46,5.57,New Year Blast
+2024-01-24,Social Media,Google,198,400,358,44.87,6.9,9.14,New Year Blast
+2024-01-24,Social Media,Other,273,36,297,74.64,4.64,9.5,Valentine's Promo
+2024-01-26,Referral,Facebook,288,32,745,57.49,8.21,6.44,Winter Sale
+2024-01-27,Organic Search,Instagram,203,344,194,44.26,10.79,6.26,General
+2024-01-27,Social Media,Instagram,215,202,561,61.43,10.07,9.51,Valentine's Promo
+2024-01-27,Organic Search,Twitter,384,91,205,20.32,1.81,3.64,General
+2024-01-28,Social Media,Google,256,272,495,29.72,12.46,4.35,Winter Sale
+2024-01-28,Direct,Twitter,486,241,621,58.7,1.68,0.7,Winter Sale
+2024-01-28,Social Media,Twitter,471,351,782,41.09,11.55,8.65,Winter Sale
+2024-01-28,Paid Ads,Google,152,35,927,40.66,3.51,4.29,Winter Sale
+2024-01-29,Referral,LinkedIn,300,379,233,76.96,3.7,6.51,Winter Sale
+2024-01-29,Social Media,Facebook,331,392,653,22.05,7.49,6.78,General
+2024-01-30,Organic Search,Other,275,33,423,55.9,11.79,6.19,Valentine's Promo
+2024-01-30,Organic Search,Instagram,278,124,271,55.22,10.02,3.55,Valentine's Promo
+2024-02-01,Paid Ads,Twitter,161,340,914,28.1,8.84,4.42,Winter Sale
+2024-02-01,Organic Search,Other,437,254,504,78.83,3.23,4.74,Winter Sale
+2024-02-02,Organic Search,Google,194,138,905,69.36,1.86,4.33,Winter Sale
+2024-02-02,Organic Search,Instagram,182,54,295,61.93,4.54,4.62,nan
+2024-02-02,Organic Search,Facebook,451,417,420,22.03,8.42,5.85,Winter Sale
+2024-02-03,Organic Search,LinkedIn,132,262,217,60.99,14.88,1.27,Valentine's Promo
+2024-02-03,Organic Search,Facebook,352,332,790,56.19,12.73,3.56,Valentine's Promo
+2024-02-04,Paid Ads,Twitter,400,329,353,64.5,4.94,8.78,Valentine's Promo
+2024-02-04,Social Media,Google,250,379,177,70.39,2.53,1.89,New Year Blast
+2024-02-04,Organic Search,Google,246,155,388,50.75,11.29,7.57,Valentine's Promo
+2024-02-04,Social Media,LinkedIn,495,265,747,28.4,8.3,6.47,Winter Sale
+2024-02-05,Organic Search,LinkedIn,362,124,811,43.8,2.18,4.04,New Year Blast
+2024-02-05,Organic Search,Instagram,269,77,231,53.1,14.39,0.67,New Year Blast
+2024-02-06,Organic Search,LinkedIn,296,355,825,77.49,1.92,4.1,New Year Blast
+2024-02-06,Paid Ads,Instagram,100,63,315,44.31,10.27,2.15,General
+2024-02-07,Organic Search,Facebook,213,403,997,21.97,10.1,7.38,New Year Blast
+2024-02-08,Direct,Other,397,41,671,37.64,9.13,3.6,General
+2024-02-09,Paid Ads,Facebook,168,183,602,70.89,9.82,6.15,General
+2024-02-10,Paid Ads,Google,390,267,278,41.78,13.56,5.1,Valentine's Promo
+2024-02-10,Referral,LinkedIn,308,42,933,33.08,10.74,2.04,Valentine's Promo
+2024-02-11,Organic Search,Facebook,390,69,240,70.78,4.97,6.0,Winter Sale
+2024-02-11,Organic Search,Other,308,179,910,31.06,13.31,3.2,General
+2024-02-11,Organic Search,Facebook,422,189,705,47.54,8.28,5.54,Winter Sale
+2024-02-12,Organic Search,LinkedIn,271,347,649,56.62,4.62,6.22,General
+2024-02-13,Organic Search,Instagram,222,140,795,49.85,8.61,9.63,Winter Sale
+2024-02-13,Organic Search,LinkedIn,241,249,559,44.77,12.04,0.59,New Year Blast
+2024-02-13,Organic Search,LinkedIn,246,236,899,79.32,6.62,3.9,Valentine's Promo
+2024-02-13,Organic Search,Facebook,100,147,506,58.34,6.21,3.89,Valentine's Promo
+2024-02-13,Referral,Instagram,460,243,104,51.59,4.88,9.12,Valentine's Promo
+2024-02-14,Direct,LinkedIn,266,303,599,40.71,11.47,6.18,Valentine's Promo
+2024-02-14,Direct,LinkedIn,447,258,715,77.31,1.26,6.79,Winter Sale
+2024-02-16,Organic Search,LinkedIn,418,71,256,35.99,4.43,7.79,New Year Blast
+2024-02-16,Direct,Facebook,194,85,478,78.74,1.63,7.62,nan
+2024-02-16,Organic Search,Google,61,34,433,38.6,1.0,2.26,Winter Sale
+2024-02-17,Paid Ads,Google,361,43,122,28.46,1.66,8.3,Winter Sale
+2024-02-17,Organic Search,LinkedIn,134,175,258,51.78,13.36,2.6,General
+2024-02-18,Social Media,Instagram,192,224,876,32.76,8.54,1.37,Winter Sale
+2024-02-19,Direct,LinkedIn,289,90,700,35.23,12.17,5.08,General
+2024-02-20,Paid Ads,Facebook,155,439,878,65.5,12.5,6.25,New Year Blast
+2024-02-20,Referral,Instagram,355,227,168,66.26,12.48,4.15,New Year Blast
+2024-02-20,Paid Ads,Google,205,355,646,57.5,1.74,5.8,General
+2024-02-20,Referral,Facebook,273,199,475,45.61,6.38,0.51,General
+2024-02-21,Organic Search,Instagram,498,141,110,70.22,13.72,8.44,General
+2024-02-21,Direct,Google,233,142,721,58.8,14.22,5.8,New Year Blast
+2024-02-21,Organic Search,LinkedIn,471,369,189,39.93,1.62,8.35,Winter Sale
+2024-02-21,Social Media,Facebook,322,30,924,60.2,8.38,9.87,Winter Sale
+2024-02-22,Organic Search,LinkedIn,269,102,927,40.06,7.54,9.76,nan
+2024-02-22,Paid Ads,Instagram,262,180,109,47.94,1.77,7.72,Winter Sale
+2024-02-22,Social Media,Facebook,195,400,138,62.24,8.35,9.38,Winter Sale
+2024-02-23,Direct,LinkedIn,439,142,939,73.25,13.65,5.58,Valentine's Promo
+2024-02-23,Paid Ads,Facebook,84,286,501,40.36,13.38,9.44,New Year Blast
+2024-02-24,Social Media,Facebook,321,346,558,67.99,14.06,6.18,General
+2024-02-26,Organic Search,Google,124,437,722,57.4,12.76,6.7,New Year Blast
+2024-02-27,Social Media,Twitter,282,310,712,66.83,6.66,5.66,nan
+2024-02-27,Organic Search,Facebook,379,76,281,23.1,12.96,0.82,Valentine's Promo
+2024-02-28,Organic Search,Google,50,122,518,78.53,11.33,4.81,Winter Sale
+2024-02-28,Organic Search,Facebook,352,276,401,36.19,6.27,4.65,New Year Blast
+2024-02-28,Organic Search,Google,334,241,712,58.23,1.01,7.2,Valentine's Promo
+2024-02-29,Paid Ads,Other,316,436,490,69.51,14.95,6.32,New Year Blast
+2024-02-29,Social Media,Facebook,103,90,194,53.44,6.98,0.67,nan
+2024-02-29,Paid Ads,Google,69,417,741,54.66,7.73,8.75,Valentine's Promo
+2024-02-29,Direct,Instagram,235,107,878,48.87,5.71,1.92,Winter Sale
+2024-02-29,Referral,Instagram,277,76,824,36.34,11.02,7.69,New Year Blast
+2024-03-01,Organic Search,Other,107,291,649,56.47,8.78,7.84,Valentine's Promo
+2024-03-02,Direct,LinkedIn,490,306,335,37.98,14.86,9.69,New Year Blast
+2024-03-02,Organic Search,Twitter,193,432,417,31.07,7.47,9.16,nan
+2024-03-02,Social Media,Google,115,65,309,29.28,7.05,1.4,Valentine's Promo
+2024-03-02,Paid Ads,Twitter,379,121,984,43.84,3.6,4.89,Winter Sale
+2024-03-02,Social Media,Facebook,499,85,521,77.76,12.63,2.41,Winter Sale
+2024-03-02,Paid Ads,Twitter,343,364,232,47.58,14.26,4.27,New Year Blast
+2024-03-02,Direct,Twitter,387,398,939,20.14,10.92,8.9,Winter Sale
+2024-03-02,Organic Search,Facebook,450,169,519,61.59,2.43,5.63,Valentine's Promo
+2024-03-02,Organic Search,LinkedIn,415,257,327,49.89,13.69,2.43,Winter Sale
+2024-03-02,Organic Search,LinkedIn,396,223,703,26.19,2.05,4.76,Valentine's Promo
+2024-03-02,Direct,Google,54,394,324,64.15,12.21,9.01,nan
+2024-03-02,Social Media,Google,79,162,396,25.2,6.37,3.91,New Year Blast
+2024-03-03,Organic Search,Facebook,131,384,394,53.4,14.85,8.88,Valentine's Promo
+2024-03-03,Referral,Facebook,317,99,759,24.09,4.2,4.93,New Year Blast
+2024-03-03,Direct,Google,434,68,649,79.12,12.93,5.05,New Year Blast
+2024-03-04,Social Media,Instagram,407,51,236,40.96,1.98,6.27,General
+2024-03-04,Referral,LinkedIn,196,37,267,34.89,8.85,2.4,New Year Blast
+2024-03-05,Paid Ads,Twitter,391,323,114,66.43,1.49,7.95,General
+2024-03-05,Organic Search,Twitter,498,112,360,35.82,13.15,7.49,General
+2024-03-06,Organic Search,Facebook,278,60,317,70.49,2.8,6.13,New Year Blast
+2024-03-10,Social Media,Google,357,421,150,77.73,10.46,4.77,General
+2024-03-11,Referral,LinkedIn,304,166,445,49.03,2.62,1.16,General
+2024-03-11,Referral,Facebook,332,400,768,71.66,13.04,0.89,General
+2024-03-11,Paid Ads,Other,241,150,264,73.85,9.25,9.55,Winter Sale
+2024-03-12,Paid Ads,Other,298,55,128,67.4,7.24,6.08,New Year Blast
+2024-03-12,Social Media,Facebook,183,63,419,33.64,14.99,8.48,Winter Sale
+2024-03-12,Social Media,Facebook,291,107,242,39.44,1.51,6.87,General
+2024-03-12,Social Media,Google,214,423,941,74.03,2.53,5.65,nan
+2024-03-13,Organic Search,Google,171,262,419,55.25,7.72,6.69,nan
+2024-03-13,Organic Search,Facebook,102,97,734,27.94,14.47,3.66,New Year Blast
+2024-03-14,Social Media,Twitter,458,156,736,68.41,4.23,9.79,New Year Blast
+2024-03-15,Organic Search,Other,366,72,967,56.22,3.7,0.8,Valentine's Promo
+2024-03-15,Paid Ads,Instagram,222,264,610,67.27,11.23,9.65,Winter Sale
+2024-03-15,Social Media,Instagram,355,163,987,24.56,3.33,2.75,New Year Blast
+2024-03-16,Referral,Google,96,213,418,38.69,7.17,4.98,Winter Sale
+2024-03-17,Organic Search,LinkedIn,484,364,898,38.88,12.93,6.86,New Year Blast
+2024-03-17,Direct,LinkedIn,428,306,382,25.42,1.07,3.91,Valentine's Promo
+2024-03-18,Social Media,Twitter,337,130,146,63.93,3.2,5.3,Valentine's Promo
+2024-03-18,Organic Search,Other,300,245,764,25.22,14.4,9.54,Valentine's Promo
+2024-03-18,Social Media,Instagram,466,136,509,72.02,6.48,1.48,nan
+2024-03-19,Paid Ads,Facebook,211,258,854,45.32,13.34,8.03,Winter Sale
+2024-03-19,Organic Search,LinkedIn,182,304,913,63.45,4.54,7.93,General
+2024-03-20,Paid Ads,Facebook,423,216,715,72.59,8.26,6.32,General
+2024-03-20,Referral,LinkedIn,423,151,916,71.64,13.27,8.07,New Year Blast
+2024-03-21,Paid Ads,LinkedIn,261,348,673,44.48,2.74,5.92,General
+2024-03-21,Organic Search,Google,360,260,196,30.93,5.61,3.63,Winter Sale
+2024-03-22,Organic Search,Twitter,114,341,203,58.58,9.36,3.34,Winter Sale
+2024-03-23,Organic Search,LinkedIn,222,234,993,64.65,5.38,1.75,Winter Sale
+2024-03-24,Organic Search,Google,301,104,455,62.3,3.43,6.09,Valentine's Promo
+2024-03-24,Referral,Instagram,90,278,390,65.19,12.94,6.74,Winter Sale
+2024-03-25,Direct,LinkedIn,338,43,920,27.37,4.03,6.36,nan
+2024-03-26,Paid Ads,Other,254,293,114,63.21,13.1,4.45,nan
+2024-03-26,Paid Ads,Other,456,416,462,52.39,1.13,1.43,Valentine's Promo
+2024-03-27,Paid Ads,LinkedIn,414,415,244,57.99,12.57,1.68,Valentine's Promo
+2024-03-27,Direct,Instagram,209,155,238,32.33,2.69,8.75,Winter Sale
+2024-03-28,Direct,Google,466,221,577,78.47,6.48,4.67,nan
+2024-03-28,Organic Search,LinkedIn,352,269,944,26.86,2.61,7.45,Valentine's Promo
+2024-03-28,Organic Search,Facebook,187,49,445,74.2,7.56,8.71,Valentine's Promo
+2024-03-28,Paid Ads,Twitter,148,231,256,53.95,1.62,6.68,Winter Sale
+2024-03-28,Social Media,LinkedIn,50,140,976,24.03,9.0,8.48,New Year Blast
+2024-03-28,Paid Ads,Twitter,301,365,749,75.11,8.31,3.46,nan
+2024-03-29,Direct,Twitter,185,63,939,52.07,2.28,9.85,New Year Blast
+2024-03-29,Organic Search,Instagram,147,147,904,24.67,11.79,2.73,General
+2024-03-29,Paid Ads,Google,63,381,884,33.21,12.26,2.44,Winter Sale
+2024-03-29,Organic Search,Facebook,226,140,678,40.15,7.88,7.94,New Year Blast
+2024-03-29,Organic Search,Twitter,364,256,722,41.77,13.53,5.07,New Year Blast
+2024-03-30,Paid Ads,Instagram,305,209,625,68.32,1.91,8.33,Valentine's Promo
+2024-03-30,Organic Search,Facebook,121,349,229,54.4,14.02,0.78,Valentine's Promo
+2024-03-30,Organic Search,Other,167,318,893,77.52,7.52,9.93,nan
+2024-03-30,Organic Search,Instagram,77,440,369,26.18,1.05,4.26,General
+2024-03-31,Organic Search,Instagram,309,398,256,26.39,11.27,8.54,New Year Blast
+2024-03-31,Referral,Twitter,464,184,649,50.91,10.26,1.96,General

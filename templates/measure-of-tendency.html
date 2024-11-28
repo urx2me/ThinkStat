@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Central Tendency Calculator</title>
     <style>
-        /* Copy the same styles from index.html */
         body, h1, h2, h3, p {
             margin: 0;
             padding: 0;
@@ -18,7 +17,7 @@
         }
 
         nav {
-            background-color: #7393B3; 
+            background-color: #7393B3;
             position: fixed;
             top: 0;
             width: 100%;
@@ -48,14 +47,13 @@
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.3); 
+            background-color: rgba(255, 255, 255, 0.3);
             border-radius: 5px;
         }
 
-        /* Add styles for the page content */
         .hero {
             text-align: center;
-            background-image: url('mathyy.jpg');  
+            background-image: url('mathyy.jpg');
             background-size: auto;
             color: white;
             padding: 50px 20px;
@@ -81,11 +79,6 @@
             margin-bottom: 10px;
         }
 
-        .hero p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
         .content {
             padding: 60px 20px;
             text-align: center;
@@ -95,7 +88,7 @@
         .content h2 {
             font-size: 36px;
             margin-bottom: 20px;
-            color: #7393B3; 
+            color: #7393B3;
         }
 
         .content p {
@@ -104,12 +97,12 @@
             max-width: 900px;
             margin: 0 auto;
             line-height: 1.6;
-            text-align: justify; 
+            text-align: justify;
         }
 
         footer {
             text-align: center;
-            background-color: #7393B3; 
+            background-color: #7393B3;
             color: white;
             padding: 20px;
             position: relative;
@@ -124,7 +117,6 @@
 </head>
 <body>
 
-    <!-- Navbar copied from index.html -->
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -137,7 +129,7 @@
     <section class="hero">
         <div class="content">
             <h1>Central Tendency Calculator</h1>
-            <p style="color:white;">Upload a CSV file or manually input data to calculate the mean, median, and mode.</p>
+            <p>Upload a CSV file or manually input data to calculate the mean, median, and mode.</p>
         </div>
     </section>
 
@@ -162,19 +154,16 @@
 
         <br><hr><br>
 
-        <!-- Manual Input Form -->
-        <form id="manualForm">
-            <label for="data">Enter Data (comma-separated):</label><br>
-            <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
-            <button type="submit">Analyze</button>
-        </form>
+           <!-- Manual Input Form -->
+    <form id="manualForm">
+        <label for="data">Enter Data (comma-separated):</label><br>
+        <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
+        <label for="interval">Enter Interval (optional for grouped calculations):</label><br>
+        <input type="number" id="interval" name="interval" step="0.1" placeholder="e.g., 5"><br><br>
+        <button type="submit">Analyze</button>
+    </form>
 
-        <div id="result"></div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 ThinkStat. All rights reserved.</p>
-    </footer>
+    <div id="result"></div>
 
     <script>
         const uploadForm = document.getElementById('uploadForm');
@@ -246,19 +235,102 @@
             if (data.error) {
                 resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
             } else {
-                displayResults(data, "Manual Input");
+
+                if (data.grouped) {
+                    // Display grouped and ungrouped results
+                    displayGroupedAndUngroupedResults(data);
+                } else if (data.ungrouped) {
+                    displayUngroupedResults (data);
+                } else {
+                    displayResults(data, "Manual Input");
+                }
             }
         });
 
-        // Display Results
         function displayResults(data, title) {
-            resultDiv.innerHTML = ` 
+            const mean = data.mean !== undefined ? data.mean.toFixed(2) : 'N/A';
+            const median = data.median !== undefined ? data.median.toFixed(2) : 'N/A';
+            const mode = data.mode ? data.mode.join(', ') : 'N/A';
+            const plot_url = data.plot_url || '';
+
+            resultDiv.innerHTML = `
                 <h2>Results for ${title}</h2>
-                <p><strong>Mean:</strong> ${data.mean.toFixed(2)}</p>
-                <p><strong>Median:</strong> ${data.median.toFixed(2)}</p>
-                <p><strong>Mode:</strong> ${data.mode.join(', ')}</p>
-                <h3>Histogram</h3>
-                <img src="${data.plot_url}" alt="Histogram">
+                <p><strong>Mean:</strong> ${mean}</p>
+                <p><strong>Median:</strong> ${median}</p>
+                <p><strong>Mode:</strong> ${mode}</p>
+                ${plot_url ? `<h3>Histogram</h3><img src="${plot_url}" alt="Histogram">` : ''}
+            `;
+        }
+
+        function displayUngroupedResults (data) {
+
+        const ungrouped = data.ungrouped;
+            
+            const ungroupedResults = `
+                <h3>Ungrouped Results:</h3>
+                <p><strong>Mean:</strong> ${ungrouped.mean.toFixed(2)}</p>
+                <p><strong>Median:</strong> ${ungrouped.median.toFixed(2)}</p>
+                <p><strong>Mode:</strong> ${ungrouped.mode.join(', ')}</p>
+                <h4>Ungrouped Histogram:</h4>
+                <img src="${ungrouped.plot_url}" alt="Ungrouped Histogram">
+            `;
+
+            resultDiv.innerHTML = `
+                ${ungroupedResults}
+            `;
+        }
+
+        function displayGroupedAndUngroupedResults(data) {
+            const ungrouped = data.ungrouped;
+            const grouped = data.grouped;
+
+            const ungroupedResults = `
+                <h3>Ungrouped Results:</h3>
+                <p><strong>Mean:</strong> ${ungrouped.mean.toFixed(2)}</p>
+                <p><strong>Median:</strong> ${ungrouped.median.toFixed(2)}</p>
+                <p><strong>Mode:</strong> ${ungrouped.mode.join(', ')}</p>
+                <h4>Ungrouped Histogram:</h4>
+                <img src="${ungrouped.plot_url}" alt="Ungrouped Histogram">
+            `;
+
+            const groupedResults = `
+                    <h3>Grouped Results:</h3>
+                    <p><strong>Mean:</strong> ${grouped.mean.toFixed(2)}</p>
+                    <p><strong>Median:</strong> ${grouped.median.toFixed(2)}</p>
+                    <p><strong>Mode:</strong> ${grouped.mode !== null ? grouped.mode.toFixed(2) : 'N/A'}</p>
+                    <h4>Frequency Table:</h4>
+                    <table style="border-collapse: collapse; width: auto; margin: 0;">
+                        <thead>
+                            <tr>
+                                <th style="border: 1px solid black; padding: 2px 5px;">Interval (Bin)</th>
+                                <th style="border: 1px solid black; padding: 2px 5px;">Frequency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${grouped.frequency_table.bins.map((bin, index) => `
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 2px 5px; text-align: center;">${bin}</td>
+                                    <td style="border: 1px solid black; padding: 2px 5px; text-align: center;">${grouped.frequency_table.frequencies[index]}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                    <h4>Grouped Histogram:</h4>
+                    <img 
+                        src="${grouped.plot_url}" 
+                        alt="Grouped Histogram" 
+                        onerror="this.onerror=null; this.src='https://via.placeholder.com/150';">
+                `;
+
+                // Debugging logs
+                console.log("Grouped Histogram URL:", grouped.plot_url);
+                console.log("Grouped Data:", grouped);
+
+            resultDiv.innerHTML = `
+                <h2>Grouped and Ungrouped Results</h2>
+                ${ungroupedResults}
+                <hr>
+                ${groupedResults}
             `;
         }
     </script>
