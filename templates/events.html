@@ -4,9 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Relation Module</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        /* Place the navbar styling here or link to a shared CSS file */
+        nav {
+            background-color: #7393B3; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3); 
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar Integration -->
+    <nav>
+        <ul>
+            <li><a href="/measure-of-tendency">Measure of Tendency</a></li>
+            <li><a href="probability.html">Probability</a></li>
+            <li><a href="/events">Example</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <header class="module-header">
             <h1>Events Relation in Probability</h1>
@@ -106,6 +152,6 @@
         </footer>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

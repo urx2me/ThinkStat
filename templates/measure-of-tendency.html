@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central Tendency Calculator</title>
+    <style>
+        /* Copy the same styles from index.html */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef1e1;
+            margin: 0;
+        }
+
+        nav {
+            background-color: #7393B3; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3); 
+            border-radius: 5px;
+        }
+
+        /* Add styles for the page content */
+        .hero {
+            text-align: center;
+            background-image: url('mathyy.jpg');  
+            background-size: auto;
+            color: white;
+            padding: 50px 20px;
+            background-repeat: no-repeat;
+            height: 400px;
+            position: relative;
+        }
+
+        .hero .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #7393B3; 
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333333;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: justify; 
+        }
+
+        footer {
+            text-align: center;
+            background-color: #7393B3; 
+            color: white;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .white-text {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar copied from index.html -->
+    <nav>
+        <ul>
+            <li><a href="/measure-of-tendency">Measure of Tendency</a></li>
+            <li><a href="probability.html">Probability</a></li>
+            <li><a href="/events">Example</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Central Tendency Calculator</h1>
+            <p style="color:white;">Upload a CSV file or manually input data to calculate the mean, median, and mode.</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Central Tendency Calculations</h2>
+        <p>Upload a CSV file or input data manually to analyze the mean, median, and mode of the dataset.</p>
+        
+        <!-- File Upload Form -->
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="file">Upload a CSV file:</label>
+            <input type="file" id="file" name="file" accept=".csv">
+            <br><br>
+            <button type="submit">Upload</button>
+        </form>
+
+        <div id="columnSelection" style="display: none;">
+            <label for="columns">Select Column:</label>
+            <select id="columns"></select>
+            <br><br>
+            <button id="processButton">Calculate</button>
+        </div>
+
+        <br><hr><br>
+
+        <!-- Manual Input Form -->
+        <form id="manualForm">
+            <label for="data">Enter Data (comma-separated):</label><br>
+            <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
+            <button type="submit">Analyze</button>
+        </form>
+
+        <div id="result"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 ThinkStat. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const columnSelection = document.getElementById('columnSelection');
+        const columnsDropdown = document.getElementById('columns');
+        const processButton = document.getElementById('processButton');
+        const manualForm = document.getElementById('manualForm');
+        const resultDiv = document.getElementById('result');
+
+        let uploadedFilePath = '';  // Store the uploaded file path
+
+        // Handle File Upload
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(uploadForm);
+
+            const response = await fetch('/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                uploadedFilePath = data.file_path;  // Save file path
+                columnSelection.style.display = 'block';
+                columnsDropdown.innerHTML = data.numeric_columns.map(col => `<option value="${col}">${col}</option>`).join('');
+            }
+        });
+
+        // Handle Column Selection and Processing
+        processButton.addEventListener('click', async () => {
+            const selectedColumn = columnsDropdown.value;
+
+            const response = await fetch('/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    column: selectedColumn,
+                    file_path: uploadedFilePath
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                displayResults(data, selectedColumn);
+            }
+        });
+
+        // Handle Manual Data Input
+        manualForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(manualForm);
+
+            const response = await fetch('/manual', {
+                method: 'POST',
+                body: new URLSearchParams(formData)
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+            } else {
+                displayResults(data, "Manual Input");
+            }
+        });
+
+        // Display Results
+        function displayResults(data, title) {
+            resultDiv.innerHTML = ` 
+                <h2>Results for ${title}</h2>
+                <p><strong>Mean:</strong> ${data.mean.toFixed(2)}</p>
+                <p><strong>Median:</strong> ${data.median.toFixed(2)}</p>
+                <p><strong>Mode:</strong> ${data.mode.join(', ')}</p>
+                <h3>Histogram</h3>
+                <img src="${data.plot_url}" alt="Histogram">
+            `;
+        }
+    </script>
+</body>
+</html>

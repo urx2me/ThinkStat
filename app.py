@@ -34,6 +34,14 @@ def upload_file():
     except Exception as e:
         return jsonify({'error': f'Error reading CSV file: {str(e)}'})
 
+@app.route('/measure-of-tendency')
+def measure_of_tendency():
+    return render_template('measure-of-tendency.html')
+
+@app.route('/events')
+def events():
+    return render_template('events.html')
+
 @app.route('/process', methods=['POST'])
 def process_data():
     column = request.form.get('column')
