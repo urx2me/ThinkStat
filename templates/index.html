@@ -30,6 +30,8 @@
     <form id="manualForm">
         <label for="data">Enter Data (comma-separated):</label><br>
         <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
+        <label for="interval">Enter Interval (optional for grouped calculations):</label><br>
+        <input type="number" id="interval" name="interval" step="0.01" placeholder="e.g., 5"><br><br>
         <button type="submit">Analyze</button>
     </form>
 
@@ -109,15 +111,29 @@
             }
         });
 
-        // Display Results
-        function displayResults(data, title) {
+                function displayResults(data, title) {
+            if (data.error) {
+                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
+                return;
+            }
+
+            // Check if the required properties exist
+            const mean = data.mean || null;
+            const median = data.median || null;
+            const mode = data.mode || [];
+            const plot_url = data.plot_url || '';
+
+            // Ensure mean, median, and mode are properly handled
+            const meanDisplay = mean !== null ? mean.toFixed(2) : 'N/A';
+            const medianDisplay = median !== null ? median.toFixed(2) : 'N/A';
+            const modeDisplay = mode.length > 0 ? mode.join(', ') : 'N/A';
+            
             resultDiv.innerHTML = `
                 <h2>Results for ${title}</h2>
-                <p><strong>Mean:</strong> ${data.mean.toFixed(2)}</p>
-                <p><strong>Median:</strong> ${data.median.toFixed(2)}</p>
-                <p><strong>Mode:</strong> ${data.mode.join(', ')}</p>
-                <h3>Histogram</h3>
-                <img src="${data.plot_url}" alt="Histogram">
+                <p><strong>Mean:</strong> ${meanDisplay}</p>
+                <p><strong>Median:</strong> ${medianDisplay}</p>
+                <p><strong>Mode:</strong> ${modeDisplay}</p>
+                ${plot_url ? `<h3>Histogram</h3><img src="${plot_url}" alt="Histogram">` : ''}
             `;
         }
     </script>
