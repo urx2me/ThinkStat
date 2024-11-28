@@ -3,123 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central Tendency Calculator</title>
+    <title>Homepage - Statistical Concepts</title>
+    <style>
+      
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+     
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef1e1; 
+            margin: 0;
+        }
+
+     
+        nav {
+            background-color: #7393B3; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 15px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3); 
+            border-radius: 5px;
+        }
+
+        .hero {
+            text-align: center;
+            background-image: url('mathyy.jpg');  
+            background-size: auto;
+            color: white;
+            padding: 50px 20px;
+            background-repeat: no-repeat;
+            height: 400px;
+            position: relative;
+        }
+
+  
+        .hero .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 80%;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+ 
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #7393B3; 
+        }
+
+        .content p {
+            font-size: 18px;
+            color: #333333;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-align: justify; 
+        }
+
+        .content .card {
+            display: inline-block;
+            background-color: #B6D0E2; 
+            padding: 20px;
+            margin: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .content .card:hover {
+            transform: translateY(-10px);
+            background-color: #7393B3; 
+        }
+
+        .content .card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .content .card p {
+            font-size: 16px;
+            color: #003366; 
+        }
+
+       
+        footer {
+            text-align: center;
+            background-color: #7393B3; 
+            color: white;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .white-text {
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <h1>Central Tendency Calculator</h1>
-    <p>Upload a CSV file or manually input data to calculate the mean, median, and mode.</p>
-    
-    <!-- File Upload Form -->
-    <form id="uploadForm" enctype="multipart/form-data">
-        <label for="file">Upload a CSV file:</label>
-        <input type="file" id="file" name="file" accept=".csv">
-        <br><br>
-        <button type="submit">Upload</button>
-    </form>
 
-    <div id="columnSelection" style="display: none;">
-        <label for="columns">Select Column:</label>
-        <select id="columns"></select>
-        <br><br>
-        <button id="processButton">Calculate</button>
-    </div>
+ 
+    <nav>
+        <ul>
+            <li><a href="measure-of-tendency.html">Measure of Tendency</a></li>
+            <li><a href="probability.html">Probability</a></li>
+            <li><a href="example.html">Example</a></li>
+        </ul>
+    </nav>
 
-    <br><hr><br>
+    <section class="hero">
+        <div class="content">
+            <h1>Welcome to Statistical Concepts</h1>
+            <p style="color:white;">Explore the fascinating world of Statistics and Probability. Gain a deeper understanding of data analysis, decision-making, and uncertainty through key statistical concepts.</p>
+        </div>
+    </section>
 
-    <!-- Manual Input Form -->
-    <form id="manualForm">
-        <label for="data">Enter Data (comma-separated):</label><br>
-        <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
-        <button type="submit">Analyze</button>
-    </form>
+    <section class="content">
+        <h2>What is Statistics?</h2>
+        <p>Statistics is the study of collecting, analyzing, interpreting, presenting, and organizing data. It provides valuable tools for understanding trends and patterns in data, enabling informed decisions in various fields such as business, healthcare, and social sciences. Key concepts in statistics include probability, hypothesis testing, data visualization, and regression analysis.</p>
+    </section>
 
-    <div id="result"></div>
+    <section class="content">
+        <h2>What is Probability?</h2>
+        <p>Probability is a branch of mathematics that deals with the likelihood or chance of different outcomes. It helps us model uncertain events and make predictions based on incomplete information. From flipping coins to predicting weather, probability is at the core of decision-making under uncertainty and is essential in fields like finance, science, and engineering.</p>
+    </section>
 
-    <script>
-        const uploadForm = document.getElementById('uploadForm');
-        const columnSelection = document.getElementById('columnSelection');
-        const columnsDropdown = document.getElementById('columns');
-        const processButton = document.getElementById('processButton');
-        const manualForm = document.getElementById('manualForm');
-        const resultDiv = document.getElementById('result');
+    <section class="content">
+        <h2>Explore Key Concepts</h2>
+        <div class="card">
+            <h3 style="color:white;">Measure of Tendency</h3>
+            <p style="color: white;">Understand how the mean, median, and mode help summarize data and represent central values.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:white;">Probability</h3>
+            <p style="color: white;">Learn the fundamental concepts of probability and how to calculate the likelihood of events.</p>
+        </div>
+        <div class="card">
+            <h3 style="color:white;">Examples</h3>
+            <p style="color: white;">See real-world examples of how statistics and probability are applied to solve problems.</p>
+        </div>
+    </section>
 
-        let uploadedFilePath = '';  // Store the uploaded file path
+    <footer>
+        <p>&copy; 2024 Statistical Concepts. All rights reserved.</p>
+    </footer>
 
-        // Handle File Upload
-        uploadForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(uploadForm);
-
-            const response = await fetch('/upload', {
-                method: 'POST',
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (data.error) {
-                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
-            } else {
-                uploadedFilePath = data.file_path;  // Save file path
-                columnSelection.style.display = 'block';
-                columnsDropdown.innerHTML = data.numeric_columns.map(col => `<option value="${col}">${col}</option>`).join('');
-            }
-        });
-
-        // Handle Column Selection and Processing
-        processButton.addEventListener('click', async () => {
-            const selectedColumn = columnsDropdown.value;
-
-            const response = await fetch('/process', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: new URLSearchParams({
-                    column: selectedColumn,
-                    file_path: uploadedFilePath
-                })
-            });
-
-            const data = await response.json();
-
-            if (data.error) {
-                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
-            } else {
-                displayResults(data, selectedColumn);
-            }
-        });
-
-        // Handle Manual Data Input
-        manualForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const formData = new FormData(manualForm);
-
-            const response = await fetch('/manual', {
-                method: 'POST',
-                body: new URLSearchParams(formData)
-            });
-
-            const data = await response.json();
-
-            if (data.error) {
-                resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
-            } else {
-                displayResults(data, "Manual Input");
-            }
-        });
-
-        // Display Results
-        function displayResults(data, title) {
-            resultDiv.innerHTML = `
-                <h2>Results for ${title}</h2>
-                <p><strong>Mean:</strong> ${data.mean.toFixed(2)}</p>
-                <p><strong>Median:</strong> ${data.median.toFixed(2)}</p>
-                <p><strong>Mode:</strong> ${data.mode.join(', ')}</p>
-                <h3>Histogram</h3>
-                <img src="${data.plot_url}" alt="Histogram">
-            `;
-        }
-    </script>
 </body>
 </html>
+
