@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: 2em auto;
+    padding: 1em;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.module-header h1 {
+    color: #487039;
+    font-size: 2em;
+}
+
+.module-header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.module {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.module h2 {
+    color: #487039;
+    font-size: 1.5em;
+}
+
+.module ul {
+    display: inline-block; 
+    text-align: left;       
+    margin: 0 auto;        
+    padding-left: 1.2em;    
+}
+
+.module ul li {
+    margin: 0.5em 0;
+    font-size: 1.1em;
+}
+
+.interactive-section {
+    margin: 2em 0;
+}
+
+.interactive-section h2 {
+    color: #487039;
+    font-size: 1.5em;
+}
+
+.controls {
+    margin: 1em 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.controls label {
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.venn-diagram {
+    margin: 2em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+circle {
+    transition: fill 0.3s ease, opacity 0.3s ease; /* Smooth transitions for color changes */
+}
+
+.venn-diagram svg {
+    position: relative;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2em;
+    background: #333;
+    color: white;
+    padding: 0.1em;  
+}
+
+.example {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.example h3 {
+    color: #487039;
+    font-size: 1.5em;
+}
+
+.example ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.example ul li {
+    font-size: 1.1em;
+}
+
+.additional-info {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.additional-info h3 {
+    color: #487039;
+    font-size: 1.5em;
+}
+
+.additional-info p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
