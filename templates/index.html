@@ -31,7 +31,7 @@
         <label for="data">Enter Data (comma-separated):</label><br>
         <textarea id="data" name="data" rows="5" cols="40" placeholder="e.g., 1, 2, 3, 4, 5"></textarea><br>
         <label for="interval">Enter Interval (optional for grouped calculations):</label><br>
-        <input type="number" id="interval" name="interval" step="0.01" placeholder="e.g., 5"><br><br>
+        <input type="number" id="interval" name="interval" step="0.1" placeholder="e.g., 5"><br><br>
         <button type="submit">Analyze</button>
     </form>
 
@@ -107,9 +107,12 @@
             if (data.error) {
                 resultDiv.innerHTML = `<p style="color: red;">Error: ${data.error}</p>`;
             } else {
+
                 if (data.grouped) {
                     // Display grouped and ungrouped results
                     displayGroupedAndUngroupedResults(data);
+                } else if (data.ungrouped) {
+                    displayUngroupedResults (data);
                 } else {
                     displayResults(data, "Manual Input");
                 }
@@ -128,6 +131,24 @@
                 <p><strong>Median:</strong> ${median}</p>
                 <p><strong>Mode:</strong> ${mode}</p>
                 ${plot_url ? `<h3>Histogram</h3><img src="${plot_url}" alt="Histogram">` : ''}
+            `;
+        }
+
+        function displayUngroupedResults (data) {
+
+        const ungrouped = data.ungrouped;
+            
+            const ungroupedResults = `
+                <h3>Ungrouped Results:</h3>
+                <p><strong>Mean:</strong> ${ungrouped.mean.toFixed(2)}</p>
+                <p><strong>Median:</strong> ${ungrouped.median.toFixed(2)}</p>
+                <p><strong>Mode:</strong> ${ungrouped.mode.join(', ')}</p>
+                <h4>Ungrouped Histogram:</h4>
+                <img src="${ungrouped.plot_url}" alt="Ungrouped Histogram">
+            `;
+
+            resultDiv.innerHTML = `
+                ${ungroupedResults}
             `;
         }
 

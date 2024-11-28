@@ -98,6 +98,7 @@ def manual_input():
         return jsonify({'error': f'Error processing manual data: {str(e)}'})
 
 
+
 # --- Calculation and Histogram Functions ---
 
 def calculate_and_generate_histogram(numbers, title):
