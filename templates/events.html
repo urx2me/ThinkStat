@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Relation Module</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="module-header">
+            <h1>Events Relation in Probability</h1>
+            <p>Learn about the relationships between events in probability!</p>
+        </header>
+
+        <section class="content">
+            <!-- Module Description -->
+            <div class="module">
+                <h2>Understanding Events Relation</h2>
+                <p>
+                    In probability and statistics, events can be related in various ways. <br>
+                    Here are some common relationships: 
+                </p>
+                <ul>
+                    <li><b>Union (A ∪ B):</b> The set of outcomes that are in A, B, or in both.</li>
+                    <li><b>Intersection (A ∩ B):</b> The set of outcomes that are in both A and B.</li>
+                    <li><b>Complement (Aᶜ):</b> The set of outcomes that is not in A.</li>
+                </ul>
+            </div>
+
+            <!-- Interactive Venn Diagram -->
+            <div class="interactive-section">
+                <h2>Interactive Venn Diagram</h2>
+                <p>Use the controls below to visualize the relationships between two events (A and B).</p>
+
+                <div class="controls">
+                    <label>
+                        <input type="checkbox" id="unionCheckbox" onclick="toggleRegion('union')">
+                        Show Union (A ∪ B)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="intersectionCheckbox" onclick="toggleRegion('intersection')">
+                        Show Intersection (A ∩ B)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="complementCheckbox" onclick="toggleRegion('complement')">
+                        Show Complement (Aᶜ)
+                    </label>
+                </div>
+
+                <div class="venn-diagram">
+                    <svg width="350" height="200">
+                        <!-- Circle A -->
+                        <circle cx="120" cy="100" r="80" fill="lightblue" stroke="blue" stroke-width="2" id="setA" opacity="0.8"></circle>
+                        <!-- Circle B -->
+                        <circle cx="220" cy="100" r="80" fill="lightpink" stroke="red" stroke-width="2" id="setB" opacity="0.8"></circle>
+                        <!-- Labels -->
+                        <text x="100" y="50" font-size="18" fill="blue">A</text>
+                        <text x="220" y="50" font-size="18" fill="red">B</text>
+                    </svg>                    
+                </div>
+            </div>
+
+            <!-- Example Section -->
+            <div class="example">
+                <h3>Example</h3>
+                <p>Select a student from the classroom and record his/her hair color and gender.</p>
+                <ul>
+                    <li><b>A:</b> student has brown hair</li>
+                    <li><b>B:</b> student is female</li>
+                    <li><b>C:</b> student is male</li>
+                </ul>
+                <p>What is the relationship between events B and C?</p>
+                <ul>
+                    <li><b>Aᶜ:</b> Student does not have brown hair</li>
+                    <li><b>B ∩ C:</b> Student is both male and female = ∅</li>
+                    <li><b>B ∪ C:</b> Student is either male or female = all students = S</li>
+                </ul>
+            </div>
+
+            <!-- Additional Information about Mutually Exclusive Events -->
+            <div class="additional-info">
+                <h3>Additional Information</h3>
+                <p>If two events A and B are mutually exclusive, then P(A ∩ B) = 0.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 ThinkStat</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
